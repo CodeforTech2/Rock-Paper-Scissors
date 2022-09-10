@@ -9,6 +9,7 @@ console.log("test");
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 
+// Create a function to generate a random choice 
 function getComputerChoice() {
     let random =  Math.floor(Math.random() * (4 - 1) + 1);
     if (random === 1) {
@@ -19,4 +20,4 @@ function getComputerChoice() {
         return "scissors";
     }
 };
-console.log(getComputerChoice());
+
