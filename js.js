@@ -3,11 +3,12 @@
 - paper beat rock
 - scissors beat paper
 */
-console.log("test");
+
 
 // Declare the user and computer variables choices
-const playerSelection = "rock";//prompt("Rock, paper or scissors? Write down your answer:");
-const computerSelection = "paper"; //getComputerChoice();
+const playerSelection = prompt("Rock, paper or scissors? Write down your answer:");
+const computerSelection = getComputerChoice();
+console.log("My choice: " + playerSelection);
 
 // Create a function to generate a random choice 
 function getComputerChoice() {
@@ -21,16 +22,22 @@ function getComputerChoice() {
     }
 };
 
-console.log(computerSelection);
+console.log("Computer choice: " + computerSelection);
 
 //Function to declare the winner
 function round(playerSelection, computerSelection) {
-    if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You win! Rock beats Scissors";
+    if (playerSelection === "rock" && computerSelection === "scissors") {
+        return "You win! Rock beats Scissors!";
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        return "You loose! Paper beats Rock!";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return `You win! Paper beats Rock`;
+        return `You win! Paper beats Rock!`;
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return `You loose! Scissors beats paper!`;
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return `You win! Scissors beats Paper`;
+        return `You win! Scissors beats Paper!`;
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return `You loose! Rock beats Scissors!`;
     } else {
         return `It's a tie!`;
     }
