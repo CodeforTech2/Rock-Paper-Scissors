@@ -6,11 +6,11 @@
 
 
 // Declare the user and computer variables choices
-const playerSelection = prompt("Rock, paper or scissors? Write down your answer:");
+const playerSelection = prompt("Rock, paper or scissors? Write down your answer:").toLowerCase();
 const computerSelection = getComputerChoice();
 console.log("My choice: " + playerSelection);
 
-// Create a function to generate a random choice 
+// Create a function to generate a random computer choice 
 function getComputerChoice() {
     let random =  Math.floor(Math.random() * (4 - 1) + 1);
     if (random === 1) {
