@@ -9,4 +9,7 @@ console.log("test");
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 
-
+function getComputerChoice(min, max) {
+    return Math.floor(Math.random() * (max - min) + min;
+};
+console.log(getComputerChoice(1, 4));
