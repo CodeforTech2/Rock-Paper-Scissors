@@ -1,9 +1,9 @@
 // Create a function to generate a random computer choice 
 function getComputerChoice() {
-    let random =  Math.floor(Math.random() * (4 - 1) + 1);
-    if (random === 1) {
+    let random =  Math.floor(Math.random() * 3);
+    if (random === 0) {
         return "rock";
-    } else if (random === 2) {
+    } else if (random === 1) {
         return "paper";
     } else {
         return "scissors";
