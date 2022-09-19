@@ -37,7 +37,7 @@ function round(playerSelection, computerSelection) {
 //Function that play 5 rounds and keeps score and reports winners
 function game() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = "rock" //prompt("Rock, paper or scissors? Write down your answer:");
+        let playerSelection = "rock"; //prompt("Rock, paper or scissors? Write down your answer:");
         let computerSelection = getComputerChoice();
         round();
         console.log(i + 1, `Player: ${playerSelection} - Computer: ${computerSelection}`);
@@ -51,7 +51,6 @@ function game() {
         } else {
             console.log("It's a tie!");
         }
-    //}
 };                      
 
 console.log(game());
