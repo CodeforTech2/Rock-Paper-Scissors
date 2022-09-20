@@ -1,3 +1,26 @@
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    console.log(rock)
+});
+
+let playerSelection = '';
+const buttons = document.querySelectorAll('button');
+buttons.forEach(btn => btn.addEventListener('click', () => {
+    playerSelection = btn.id;
+    
+}))
+console.log(playerSelection);
+
+const test = document.querySelector('#test');
+test.addEventListener('click', () => {
+    console.log(test.id);
+})
+
+
+
+
+
+
 // Create a function to generate a random computer choice 
 function getComputerChoice() {
     let random =  Math.floor(Math.random() * 3);
@@ -10,7 +33,10 @@ function getComputerChoice() {
     }
 };
 
-let playerScore = 0;
+let computerSelection = getComputerChoice();
+// console.log(computerSelection);
+
+let playerScore = 0;    
 let computerScore = 0;
     
 //Function to declare the winner
@@ -51,6 +77,6 @@ function game() {
         } else {
             console.log("It's a tie!");
         }
-};                      
+};
 
 console.log(game());
