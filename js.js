@@ -4,6 +4,7 @@ const player = document.querySelector('#player');
 const computer = document.querySelector('#computer');
 const playerSel = document.querySelector('#playerSelection');
 const computerSel = document.querySelector('#computerSelection');
+const finalScore = document.querySelector('#final-score');
 
 let playerScore = 0;    
 let computerScore = 0;
@@ -21,6 +22,29 @@ function getComputerChoice() {
         return "scissors";
     }
 };
+
+function playRound(playerSelection, computerSelection) {
+    if (
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper")
+    ) {
+        playerScore++;
+        player.innerHTML = playerScore;
+        return `You win! ${playerSelection} beats ${computerSelection}!`;
+    } else if (
+        (playerSelection === "rock" && computerSelection === "paper") ||
+        (playerSelection === "paper" && computerSelection === "scissors") ||
+        (playerSelection === "scissors" && computerSelection === "rock")
+    ) {
+        computerScore++;
+        computer.innerHTML = computerScore;
+        return `You loose! ${computerSelection} beats ${playerSelection}!`;
+    }  else {
+        return `It's a tie!`;
+    }
+};
+
 //Function that end game and announce the winner and the final score
 function endGame() {
     if (count === 5) {
@@ -30,58 +54,37 @@ function endGame() {
         
         if (playerScore > computerScore) {
             console.log(`Player win with: ${playerScore}-${computerScore}`);
+            finalScore.innerHTML = `Player win with: ${playerScore} - ${computerScore}`;
         } else if (computerScore > playerScore) {
-            console.log(`Computer win with: ${computerScore}-${playerScore}!`);
+            console.log(`Computer win with: ${computerScore} - ${playerScore}!`);
+            finalScore.innerHTML = `Computer win with: ${computerScore}-${playerScore}!`;
         } else {
             console.log("It's a tie!");
+            finalScore.innerHTML = `It's a tie: ${playerScore} - ${computerScore}`;
         }
     }
+    // finalScore.innerHTML = "";
 };
-
-// buttons.onclick = function () {
-//     // count++;
-//     console.log(buttons[0]);
-//     // disp.innerHTML = count;
-// };
 
 buttons.forEach(btn => btn.addEventListener('click', () => {
     count++;
     console.log(count);
     disp.innerHTML = count;
-    function playRound(playerSelection, computerSelection) {
-        if (
-            (playerSelection === "rock" && computerSelection === "scissors") ||
-            (playerSelection === "paper" && computerSelection === "rock") ||
-            (playerSelection === "scissors" && computerSelection === "paper")
-        ) {
-            playerScore++;
-            player.innerHTML = playerScore;
-            return `You win! ${playerSelection} beats ${computerSelection}!`;
-        } else if (
-            (playerSelection === "rock" && computerSelection === "paper") ||
-            (playerSelection === "paper" && computerSelection === "scissors") ||
-            (playerSelection === "scissors" && computerSelection === "rock")
-        ) {
-            computerScore++;
-            computer.innerHTML = computerScore;
-            return `You loose! ${computerSelection} beats ${playerSelection}!`;
-        }  else {
-            return `It's a tie!`;
-        }
-    };
+   
+    playRound(playerSelection, computerSelection)
 
     function game() {
         if (count <= 5) {
             let playerSelection = btn.id;
             let computerSelection = getComputerChoice();
             playRound();
+            playerSel.innerHTML = playerSelection;
+            computerSel.innerHTML = computerSelection;
             console.log(`Player: ${playerSelection} - Computer: ${computerSelection}`);
             console.log( playRound(playerSelection, computerSelection), playerScore, computerScore);
-        };        
+        };
+        endGame();
     };
-
-    endGame();
-    
     console.log(game());
 }));
 
