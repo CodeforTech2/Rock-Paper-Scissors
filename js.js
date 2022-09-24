@@ -23,12 +23,18 @@ function getComputerChoice() {
 };
 //Function that end game and announce the winner and the final score
 function endGame() {
-    if (playerScore > computerScore) {
-        console.log(`Player win with: ${playerScore}-${computerScore}`);
-    } else if (computerScore > playerScore) {
-        console.log(`Computer win with: ${computerScore}-${playerScore}!`);
-    } else {
-        console.log("It's a tie!");
+    if (count === 5) {
+        document.querySelector('#rock').disabled = true;
+        document.querySelector('#paper').disabled = true;
+        document.querySelector('#scissors').disabled = true;
+        
+        if (playerScore > computerScore) {
+            console.log(`Player win with: ${playerScore}-${computerScore}`);
+        } else if (computerScore > playerScore) {
+            console.log(`Computer win with: ${computerScore}-${playerScore}!`);
+        } else {
+            console.log("It's a tie!");
+        }
     }
 };
 
@@ -73,23 +79,9 @@ buttons.forEach(btn => btn.addEventListener('click', () => {
             console.log( playRound(playerSelection, computerSelection), playerScore, computerScore);
         };        
     };
-    
 
-        endGame();//ceva nu merge bine la functia asta, nu imi arata rezultatul final cu conditia asta if count == x
+    endGame();
     
     console.log(game());
 }));
 
-
-/*let count = 0;
-const btn = document.querySelector('#btn');
-const disp = document.querySelector('#display');
-
-// btn.onclick = function () {
-//     count++;
-//     disp.innerHTML = count;
-// }
-btn.addEventListener('click', () => {
-    count++;
-    // disp.innerHTML = count;
-})*/
