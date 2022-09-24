@@ -6,6 +6,11 @@ const playerSel = document.querySelector('#playerSelection');
 const computerSel = document.querySelector('#computerSelection');
 const finalScore = document.querySelector('#final-score');
 
+const rounds = document.querySelector('#rounds');
+const para = document.createElement('p');
+para.textContent = "test";
+// rounds.appendChild(para);
+console.log(para);
 let playerScore = 0;    
 let computerScore = 0;
 let count = 0; //count the number of games played;
@@ -31,6 +36,10 @@ function playRound(playerSelection, computerSelection) {
     ) {
         playerScore++;
         player.innerHTML = playerScore;
+
+        para.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+        rounds.appendChild(para);
+
         return `You win! ${playerSelection} beats ${computerSelection}!`;
     } else if (
         (playerSelection === "rock" && computerSelection === "paper") ||
