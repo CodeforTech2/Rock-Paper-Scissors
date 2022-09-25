@@ -6,11 +6,14 @@ const playerSel = document.querySelector('#playerSelection');
 const computerSel = document.querySelector('#computerSelection');
 const finalScore = document.querySelector('#final-score');
 
-const rounds = document.querySelector('#rounds');
-const para = document.createElement('p');
-para.textContent = "test";
-// rounds.appendChild(para);
-console.log(para);
+const rounds = document.querySelector('.rounds');
+const para = document.createElement('li');
+const text = document.createTextNode('Test')
+para.appendChild(text);
+rounds.appendChild(para);
+// para.createTextNode = "test";
+
+
 let playerScore = 0;    
 let computerScore = 0;
 let count = 0; //count the number of games played;
@@ -37,7 +40,10 @@ function playRound(playerSelection, computerSelection) {
         playerScore++;
         player.innerHTML = playerScore;
 
-        para.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+        // para.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+        // rounds.appendChild(para);
+        
+        para.appendChild(document.createTextNode(`You win! ${playerSelection} beats ${computerSelection}!`));
         rounds.appendChild(para);
 
         return `You win! ${playerSelection} beats ${computerSelection}!`;
@@ -48,9 +54,20 @@ function playRound(playerSelection, computerSelection) {
     ) {
         computerScore++;
         computer.innerHTML = computerScore;
+
+        // para.textContent = `You loose! ${computerSelection} beats ${playerSelection}!`;
+        // rounds.appendChild(para);
+
+        para.appendChild(document.createTextNode(`You loose! ${computerSelection} beats ${playerSelection}!`));
+        rounds.appendChild(para);
+
         return `You loose! ${computerSelection} beats ${playerSelection}!`;
     }  else {
-        return `It's a tie!`;
+        // para.textContent = "It's a tie!";
+        // rounds.appendChild(para);
+
+
+        return `It's a tie! `;
     }
 };
 
