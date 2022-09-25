@@ -7,7 +7,24 @@ body {
     margin: 0 auto;
     max-width: 1700px;
     height: 100vh;
-    background-color: lightslategray;
+    background-color: rgb(134, 151, 153);
+}
+.top {
+    padding-top: 10px;
+}
+h1 {
+    font-size: 70px;
+    text-align: center;
+}
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+.buttons {
+    text-align: center;
+}
+.buttons button {
+    font-size: 20px;
 }
 
 .selection, .score {
@@ -16,8 +33,6 @@ body {
     gap: 20%;
     justify-content: center;
 }
-
-
 
 #playerSelection, #computerSelection {
     text-transform: uppercase;
