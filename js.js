@@ -5,19 +5,18 @@ const computer = document.querySelector('#computer');
 const playerSel = document.querySelector('#playerSelection');
 const computerSel = document.querySelector('#computerSelection');
 const finalScore = document.querySelector('#final-score');
-
 const rounds = document.querySelector('.rounds');
-const para = document.createElement('li');
-const text = document.createTextNode('Test')
-para.appendChild(text);
-rounds.appendChild(para);
-// para.createTextNode = "test";
+const para = document.createElement('p');
+const restart = document.createElement('button');
 
+// function insertAfter(newNode, existingNode) {
+//     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+// };
+// insertAfter(para, rounds.lastElementChild);
 
 let playerScore = 0;    
 let computerScore = 0;
 let count = 0; //count the number of games played;
-
 
 // Generate a random choice from computer rps
 function getComputerChoice() {
@@ -39,13 +38,8 @@ function playRound(playerSelection, computerSelection) {
     ) {
         playerScore++;
         player.innerHTML = playerScore;
-
-        // para.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
-        // rounds.appendChild(para);
-        
-        para.appendChild(document.createTextNode(`You win! ${playerSelection} beats ${computerSelection}!`));
+        para.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
         rounds.appendChild(para);
-
         return `You win! ${playerSelection} beats ${computerSelection}!`;
     } else if (
         (playerSelection === "rock" && computerSelection === "paper") ||
@@ -54,19 +48,12 @@ function playRound(playerSelection, computerSelection) {
     ) {
         computerScore++;
         computer.innerHTML = computerScore;
-
-        // para.textContent = `You loose! ${computerSelection} beats ${playerSelection}!`;
-        // rounds.appendChild(para);
-
-        para.appendChild(document.createTextNode(`You loose! ${computerSelection} beats ${playerSelection}!`));
+        para.textContent = `You loose! ${computerSelection} beats ${playerSelection}!`;
         rounds.appendChild(para);
-
         return `You loose! ${computerSelection} beats ${playerSelection}!`;
     }  else {
-        // para.textContent = "It's a tie!";
-        // rounds.appendChild(para);
-
-
+        para.textContent = "It's a tie!";
+        rounds.appendChild(para);
         return `It's a tie! `;
     }
 };
@@ -88,13 +75,21 @@ function endGame() {
             console.log("It's a tie!");
             finalScore.innerHTML = `It's a tie: ${playerScore} - ${computerScore}`;
         }
+        //create a restart button with event  to start over again
+        restart.textContent = "Restart"
+        restart.className = "restart-btn"
+        rounds.appendChild(restart);
+        restart.addEventListener('click', function(){
+            window.location.reload();
+          });
+          para.textContent = '';
     }
     // finalScore.innerHTML = "";
+    
 };
 
 buttons.forEach(btn => btn.addEventListener('click', () => {
     count++;
-    console.log(count);
     disp.innerHTML = count;
    
     playRound(playerSelection, computerSelection)
