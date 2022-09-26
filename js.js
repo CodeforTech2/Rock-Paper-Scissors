@@ -9,6 +9,7 @@ const rounds = document.querySelector('.rounds');
 const para = document.createElement('p');
 const restart = document.createElement('button');
 
+para.className = "roundOutcome"
 // function insertAfter(newNode, existingNode) {
 //     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
 // };
@@ -76,16 +77,14 @@ function endGame() {
             finalScore.innerHTML = `It's a tie: ${playerScore} - ${computerScore}`;
         }
         //create a restart button with event  to start over again
-        restart.textContent = "Restart"
+        restart.textContent = "Let's try again!"
         restart.className = "restart-btn"
         rounds.appendChild(restart);
         restart.addEventListener('click', function(){
             window.location.reload();
           });
-          para.textContent = '';
+        para.textContent = '';
     }
-    // finalScore.innerHTML = "";
-    
 };
 
 buttons.forEach(btn => btn.addEventListener('click', () => {

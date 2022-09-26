@@ -14,23 +14,34 @@
             <h1>Rock Paper Scissors</h1>
             <h2>Choose your weapon!</h2>
             <div class="buttons">
-                <button id="rock">Rock</button>
-                <button id="paper">Paper</button>
-                <button id="scissors">Scissors</button>
+                <button id="rock">
+                    <img src="/Pictures/rock.png" alt="Rock" class="images">
+                </button>
+                <button id="paper">
+                    <img src="/Pictures/paper.jfif" alt="Paper" class="images">
+                </button>
+                <button id="scissors">
+                    <img src="/Pictures/scissor.jfif" alt="Scissors" class="images">
+                </button>
             </div>
         </div>
+
         <div class="selection">
-            <p>Player's choice: <span id="playerSelection">rock</span> !</p>
-            <p>Computer's choice : <span id="computerSelection">scissor</span> !</p>            
+            <p>Player : <span id="playerSelection">rock</span> !</p>
+            <p>Computer : <span id="computerSelection">scissor</span> !</p>            
         </div>
+
         <div class="score">  
             <p>Player Score: <span id="player">0</span></p>
             <p>Computer Score: <span id="computer">0</span></p>
+            <p class="round-play">(<span id="display">0</span>)</p>
         </div>
-        <div class="rounds">
-        </div>
+
         <div id="final-score"></div>
-        <p>Number of games played: <span id="display">0</span></p>
+
+        <div class="rounds"></div>
+
+        
     </section>
 </body>
 </html>
