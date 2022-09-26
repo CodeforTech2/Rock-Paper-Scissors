@@ -10,10 +10,6 @@ const para = document.createElement('p');
 const restart = document.createElement('button');
 
 para.className = "roundOutcome"
-// function insertAfter(newNode, existingNode) {
-//     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
-// };
-// insertAfter(para, rounds.lastElementChild);
 
 let playerScore = 0;    
 let computerScore = 0;
