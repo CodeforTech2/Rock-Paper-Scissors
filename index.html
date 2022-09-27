@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,31 +8,31 @@
     <title>My first webpage</title>
     <link rel="stylesheet" href="style.css">
     <script src="js.js" defer></script>
+    <script src="https://kit.fontawesome.com/9dae4c066e.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <section id="main">
-        <div class="top">
-            <h1>Rock Paper Scissors</h1>
-            <h2>Choose your weapon!</h2>
-            <div class="buttons">
-                <button id="rock">
-                    <img src="/Pictures/rock.png" alt="Rock" class="images">
-                </button>
-                <button id="paper">
-                    <img src="/Pictures/paper.jfif" alt="Paper" class="images">
-                </button>
-                <button id="scissors">
-                    <img src="/Pictures/scissor.jfif" alt="Scissors" class="images">
-                </button>
-            </div>
+        <h1>Rock Paper Scissors</h1>
+        <h2>Choose your weapon!</h2>
+        <div class="buttons">
+            <button id="rock">
+                <img src="/Pictures/rock.png" alt="Rock" class="images">
+            </button>
+            <button id="paper">
+                <img src="/Pictures/paper.jfif" alt="Paper" class="images">
+            </button>
+            <button id="scissors">
+                <img src="/Pictures/scissor.jfif" alt="Scissors" class="images">
+            </button>
         </div>
 
         <div class="selection">
             <p>Player : <span id="playerSelection">rock</span> !</p>
-            <p>Computer : <span id="computerSelection">scissor</span> !</p>            
+            <p>Computer : <span id="computerSelection">scissor</span> !</p>
         </div>
 
-        <div class="score">  
+        <div class="score">
             <p>Player Score: <span id="player">0</span></p>
             <p>Computer Score: <span id="computer">0</span></p>
             <p class="round-play">(<span id="display">0</span>)</p>
@@ -41,7 +42,8 @@
 
         <div class="rounds"></div>
 
-        
     </section>
+    <p class="footer">Copyright &copy 2022 CodeforTech2 <i class="fa-brands fa-github"></i></p>
 </body>
+
 </html>
